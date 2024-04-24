@@ -6,14 +6,14 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:15:13 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/04/22 16:54:17 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:54:10 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) {
-	std::cout << GRAY << "Default constructor called" << WHITE << std::endl;
+	std::cout << GRAY << "ClapTrap Default constructor called" << WHITE << std::endl;
 	_name = "Unamed";
 	_attackPoints = 1;
 	_energyPoints = 10;
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(std::string name) {
-	std::cout << GRAY << "Name constructor called" << WHITE << std::endl;
+	std::cout << GRAY << "ClapTrap Name constructor called" << WHITE << std::endl;
 	_name = name;
 	_attackPoints = 1;
 	_energyPoints = 10;
@@ -29,16 +29,16 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << GRAY << "Destructor called" << WHITE << std::endl;
+	std::cout << GRAY << "ClapTrap Destructor called" << WHITE << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &clapTrap) {
-	std::cout << GRAY << "Copy constructor called" << WHITE << std::endl;
+	std::cout << GRAY << "ClapTrap Copy constructor called" << WHITE << std::endl;
 	*this = clapTrap;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap) {
-	std::cout << GRAY << "Copy assignment operator called" << WHITE << std::endl;
+	std::cout << GRAY << "ClapTrap Copy assignment operator called" << WHITE << std::endl;
 	_name = clapTrap.getName();
 	_attackPoints = clapTrap._attackPoints;
 	_healthPoints = clapTrap._healthPoints;

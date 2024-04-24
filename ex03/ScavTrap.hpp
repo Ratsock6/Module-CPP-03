@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:15:19 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/04/22 14:38:22 by aallou-v         ###   ########.fr       */
+/*   Created: 2024/04/22 15:05:29 by aallou-v          #+#    #+#             */
+/*   Updated: 2024/04/24 17:36:16 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "ClapTrap.hpp"
 
-int	main(void)
-{
-	ClapTrap	fizz("Fizz");
-	ClapTrap	buzz("Buzz");
-	int			i(0);
-
-	std::cout << std::endl;
-	fizz.attack("Buzz");
-	buzz.takeDamage(0);
-	buzz.beRepaired(42);
-	std::cout << std::endl;
-	fizz.takeDamage(21);
-	buzz.takeDamage(21);
-	std::cout << std::endl;
-	while (i++ < 11)
-		buzz.attack("Meteor");
-	std::cout << std::endl;
-	return (0);
-}
+class ScavTrap: virtual public ClapTrap {
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string const &name);
+		ScavTrap(ScavTrap const &scavTrap);
+		~ScavTrap(void);
+		void		attack(std::string const &target);
+		void		guardGate(void);
+		ScavTrap	&operator=(ScavTrap const &scavTrap);
+};
